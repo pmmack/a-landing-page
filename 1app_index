@@ -1,0 +1,328 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Free Web Apps</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+    
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+        body {
+            
+            background-color: #f9f6f4;
+            color: #000000;
+            line-height: 1.6;
+            padding: 2rem;
+           
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #000;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        header .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            width: 100px; /* Resize width */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        header nav a {
+            text-decoration: none;
+            margin-left: 1.5rem;
+            color: #000;
+        }
+
+        header nav .subscribe {
+            background-color: rgb(0, 0, 0);
+            color: #fff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        /* Articles Section */
+        main h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .articles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .article-card {
+            background: #f5f5f5;
+            border: 1px solid #000;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .article-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-card .author {
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        .article-card .summary {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-card .read-more {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .article-card .tag {
+            font-size: 0.8rem;
+            border-top: 1px solid #000;
+            margin-top: auto;
+            padding-top: 0.5rem;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #000;
+        }
+
+        footer h2 {
+            font-size: 1.3rem;
+        }
+
+        footer .email {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        footer .back-to-top {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            text-align: right;
+        }
+    </style>
+   
+<body id="top">
+    <!-- Header -->
+    <header>
+        <img src="pmbw.png" alt="Logo" class="logo">
+
+        
+        <nav>
+            <a href="https://pau1.substack.com" target="_blank">Newsletter</a>
+            <a href="https://1app.ca/indexlist.html" target="_blank">List</a>
+            <a href="https://pau1.substack.com/subscribe" target="_blank" class="subscribe" =Subscribe</a>Subscribe</a>
+        </nav>
+    </header>
+
+    <!-- Articles Section -->
+    <main>
+        <h2>Free Apps with No Agenda</h2>
+        <section class="articles">
+            <!-- Row 1 -->
+            <div class="article-card">
+                <h3>Your New Password is here</h3>
+                <p class="author">Words by <strong>Pau1</strong></p>
+                <p class="summary">
+                    Using easy-to-guess passwords puts your online accounts and sensitive information at significant risk. Hackers often rely on techniques such as "brute force" attacks or "dictionary attacks" to crack passwords...
+                </p>
+                <a href="https://pau1.substack.com/p/pw" target="_blank" class="read-more">Read more →</a>
+                <div class="tag">passwords</div>
+            </div>
+
+            <div class="article-card">
+                <h3>Bitcoin Price in USD</h3>
+                <p class="author">Words by <strong>Pau1</strong></p>
+                <p class="summary">
+                    Just the Current Bitcoin Price
+                </p>
+                <a href="https://1app.ca/price.html" target="_blank" class="read-more">The App →</a>
+                <div class="tag">bitcoin</div>
+            </div>
+
+            <div class="article-card">
+                <h3>The Blogger's  Word Counter</h3>
+                <p class="author">Words by <strong>Pau1</strong></p>
+                <p class="summary">
+                    What is the Optimum Word Count for a newsletter article?
+                    There’s no right answer, but some are... <a href="https://pau1.substack.com/p/stackhacks-word-counter-for-all" target="_blank" class="read-more">Read more →</a>
+                </p>
+                <a href="https://1app.ca/wordcountermaxi.html" target="_blank" class="read-more">The App →</a>
+                <div class="tag">productivity, SEO</div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="article-card">
+                <h3>A Random One Thing</h3>
+                <p class="author">Words by <strong>Pau1</strong></p>
+                <p class="summary">
+                    Come back to this page whenever you want. Think of it as a new version of the old "Stumble Upon" website.
+                </p>
+                <a href="https://1app.ca/random.html" target="_blank" class="read-more">The App →</a>
+                <div class="tag">Random One Thing</div>
+            </div>
+
+            <div class="article-card">
+                <h3>Simple OCR Reader</h3>
+                <p class="author">Words by <strong>Pau1</strong></p>
+                <p class="summary">
+                    Optical Character Recognition (OCR) software is used to turn a picture of text into digital text you can use and edit. Supported Image File Types:
+                    JPEG (.jpg or .jpeg)
+                    PNG (.png)
+                    Static GIF (.gif) 
+                    BMP (.bmp) 
+                    WebP (.webp) 
+                </p>
+                <a href="https://1app.ca/ocr.html" target="_blank" class="read-more">The App →</a>
+                <div class="tag">OCR, Optical Character Recognition</div>
+            </div>
+
+            <div class="article-card">
+                <h3>Color Picker</h3>
+                <p class="author">Words by <strong>Pau1</strong></p>
+                <p class="summary">
+                    You see a color and would like to know what the hexidecimal code for it is. Usually for web designers to use instead of a browser extension. You'll have to shrink your screen window and use the tool in its separate window.
+                </p>
+                <a href="https://1app.ca/launcher.html" target="_blank" class="read-more">Open App →</a>
+                <div class="tag">hex color, color picker</div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="article-card">
+                <h3>Black Screen</h3>
+                <p class="author">Words by <strong>Pau1</strong></p>
+                <p class="summary">
+                    There are a number of reasons to use this app to go to a completely black monitor screen mode. 
+                <a href="https://pau1.substack.com/p/black-screen-mode" target="_blank" class="read-more">Read all about it here →<p>
+                <a href="https://1app.ca/blackscr.html" target="_blank" class="read-more">Clicking anywhere on the next page will activate fullscreen mode →</a>
+                <div class="tag">black screen mode</div>
+            </div>
+
+            <div class="article-card">
+                <h3>Drag QR Code to see URL</h3>
+                <p class="author">Words by <strong>Pau1</strong></p>
+                <p class="summary">
+                    Reveals the website where a QR code will take you to. Screenshot to website.
+                </p>
+                <a href="https://1app.ca/qr.html" target="_blank" class="read-more">The App →</a>
+                <div class="tag">QR Code Decoder</div>
+            </div>
+
+            <div class="article-card">
+                <h3>Your Computer's IP Address</h3>
+                <p class="author">Words by <strong>Pau1</strong></p>
+                <p class="summary">
+                    Shows your computer's IPv4 and IPv6 IP Addresses. It is not safe to share the IP address of your computer.</p>
+                    <p>An IP address reveals the location of your device and can be used to track your online activities. Keep it private.
+                </p>
+                <a href="https://1app.ca/ip.html" class="read-more">The App →</a>
+                <div class="tag">what's my ip address?</div>
+            </div>
+            <!-- Row 4 -->
+            <div class="article-card">
+                <h3>Meditation Web App</h3>
+                <p class="author">Words by <strong>Pau1</strong></p>
+                <p class="summary">
+                    I built this relaxation page to go to and relax for a little while, while reading words of wisdom from The Daily Stoic - by Ryan Holiday and 
+                    condensed by Derek Sivers.
+                </p>
+                <a href="https://1app.ca/scroll.html" class="read-more">The App →</a>
+                <div class="tag">relaxation</div>
+            </div>
+
+            <div class="article-card">
+                <h3>Current price of 1oz Gold in CAD</h3>
+                <p class="author">Words by <strong>Pau1</strong></p>
+                <p class="summary">
+                    I wanted an easy way to check out the current price of gold in Canadian Currency. 
+                </p>
+                <a href="https://1app.ca/goldprice.html" target="_blank" class="read-more">The App →</a>
+                <div class="tag">Price of Gold in Canada</div>
+            </div>
+
+            <div class="article-card">
+                <h3>Simple Mortgage Calculator</h3>
+                <p class="author">Words by <strong>Pau1</strong></p>
+                <p class="summary"> 
+                    You have found the Best, and Easiest to Use Mortgage Calculator on the Internet.
+                </p>
+                <a href="https://1app.ca/mortgagecalc.html" class="read-more">The App →</a>
+                <div class="tag">mortgage loan calculator</div>
+            </div>
+           <!-- Row 5 -->
+           <div class="article-card">
+            <h3>World Time Zone Convertor</h3>
+            <p class="author">Words by <strong>Pau1</strong></p>
+            <p class="summary"> 
+                Does anybody really know what time it is? Well now you do with the simple Time Zone Clock.
+            </p>
+            <a href="https://1app.ca/time.html" class="read-more">The App →</a>
+            <div class="tag">world time zones</div>
+        </div>
+           <div class="article-card">
+            <h3>Multi-Search Engines at Once</h3>
+            <p class="author">Words by <strong>Pau1</strong></p>
+            <p class="summary"> 
+                Enter your search term and search all the search engines at once. Includes Chat GPT and Perplexity, DuckDuckGo, Bing and more...
+            </p>
+            <a href="https://1app.ca/search.html" class="read-more">The App →</a>
+            <div class="tag">multi-search engines at once</div>
+        </div>
+        </section><section class="articles">
+        
+           
+        </section>
+        
+         </main>
+
+    <!-- Contact Section -->
+    <footer>
+        <h2>Contact</h2>
+        <p>Email<br><a href="mailto:paul@pau1.ca" class="email">paul@pau1.ca</a></p>
+          <!-- Back to Top Link -->
+    <a href="#top" style="display: block; text-align: right; margin-top: 20px;">
+        ↑ Back to top
+    </a>
+
+</body>
+    </footer>
+</body>
+</html>
