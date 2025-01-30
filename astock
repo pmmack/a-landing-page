@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Portfolio Tracker</title>
+    <style>
+        body {
+            background-color: #13083a;
+            color: #fff0f0;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            text-align: center;
+            padding: 40px;
+        }
+        input, button {
+            font-size: 16px;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 8px;
+            border: none;
+        }
+        input {
+            background-color: #2e2d2e;
+            color: #fff;
+            width: 200px;
+            text-align: center;
+        }
+        button {
+            background-color: #031d63;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0088cc;
+        }
+        .stock-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .arrow-up {
+            color: #00ff00; /* Green for gain */
+        }
+        .arrow-down {
+            color: #ff4444; /* Red for loss */
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1>Stock Portfolio Tracker</h1>
+    <p>Enter stock symbols (comma-separated) and number of shares:</p>
+    
+    <input type="text" id="symbols" placeholder="AAPL, TSLA, MSFT">
+    <button onclick="generateInputs()">Set Stocks</button>
+    
+    <div id="stocksContainer"></div>
+
+    <button onclick="fetchStockPrices()">Get Prices</button>
+    
+    <div id="result"></div>
+
+    <script>
+        function generateInputs() {
+            const symbols = document.getElementById("symbols").value.toUpperCase().split(',').map(s => s.trim()).filter(s => s);
+            const container = document.getElementById("stocksContainer");
+            container.innerHTML = "";
+
+            symbols.forEach(symbol => {
+                const div = document.createElement("div");
+                div.className = "stock-row";
+                div.innerHTML = `
+                    <label>${symbol}</label>
+                    <input type="number" id="shares_${symbol}" placeholder="Shares" min="1">
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        async function fetchStockPrices() {
+            const apiKey = "WTW8NEJVLPU2N9TU";
+            const symbols = document.getElementById("symbols").value.toUpperCase().split(',').map(s => s.trim()).filter(s => s);
+            const resultDiv = document.getElementById("result");
+            
+            if (symbols.length === 0) {
+                resultDiv.innerHTML = "<p style='color:red;'>Please enter at least one stock symbol!</p>";
+                return;
+            }
+
+            resultDiv.innerHTML = "<p>Loading...</p>";
+            let outputHTML = "<h2>Stock Prices</h2>";
+
+            for (const symbol of symbols) {
+                try {
+                    const response = await fetch(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`);
+                    const data = await response.json();
+                    const quote = data["Global Quote"];
+                    
+                    if (!quote || !quote["05. price"] || !quote["08. previous close"]) {
+                        outputHTML += `<p style='color:red;'>Invalid stock: ${symbol}</p>`;
+                        continue;
+                    }
+
+                    const price = parseFloat(quote["05. price"]);
+                    const prevClose = parseFloat(quote["08. previous close"]);
+                    const change = price - prevClose;
+                    const changeText = change >= 0 
+                        ? `<span class="arrow-up">📈 +$${change.toFixed(2)}</span>` 
+                        : `<span class="arrow-down">📉 -$${Math.abs(change).toFixed(2)}</span>`;
+
+                    const sharesInput = document.getElementById(`shares_${symbol}`);
+                    const shares = sharesInput ? parseInt(sharesInput.value) || 1 : 1;
+                    const totalValue = (price * shares).toFixed(2);
+
+                    outputHTML += `
+                        <p>
+                            <b>${symbol}</b>: $${price.toFixed(2)} ${changeText} 
+                            <br> Total Value (${shares} shares): <b>$${totalValue}</b>
+                        </p>
+                    `;
+                } catch (error) {
+                    outputHTML += `<p style='color:red;'>Error fetching data for ${symbol}.</p>`;
+                }
+            }
+
+            resultDiv.innerHTML = outputHTML;
+        }
+    </script>
+
+</body>
+</html>
